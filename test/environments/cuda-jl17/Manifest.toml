@@ -23,9 +23,9 @@ uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 
 [[deps.Atomix]]
 deps = ["UnsafeAtomics"]
-path = "../../../../Atomix"
+git-tree-sha1 = "c06a868224ecba914baa6942988e2f2aade419be"
 uuid = "a9b6321e-bd34-4604-b9c9-b65b8de01458"
-version = "0.1.1-DEV"
+version = "0.1.0"
 
 [[deps.AtomixCUDA]]
 deps = ["Atomix", "CUDA"]
