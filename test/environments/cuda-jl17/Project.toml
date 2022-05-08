@@ -1,5 +1,0 @@
-[deps]
-AtomixCUDA = "6171a885-8764-404f-b64d-f8edb1679b6f"
-AtomixCUDATests = "210b840b-8615-4854-b591-ce0d4815b014"
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
-TestFunctionRunner = "792026f5-ac9a-4a19-adcb-47b0ce2deb5d"

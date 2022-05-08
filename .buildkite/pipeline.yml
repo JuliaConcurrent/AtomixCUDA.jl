@@ -1,20 +1,15 @@
 steps:
-  - label: "Julia v1.7"
+  - label: "Julia v1"
     plugins:
       - JuliaCI/julia#v1:
-          version: "1.7-nightly"
+          version: "1"
+      - JuliaCI/julia-test#v1: ~
       - JuliaCI/julia-coverage#v1:
           codecov: true
-    commands:
-      - julia -e 'using Pkg; Pkg.add(name="Run", version="0.1")'
-      - julia -e 'using Run; Run.prepare("test/environments/cuda-jl17")'
-      - julia -e 'using Run; Run.test(project="test/environments/cuda-jl17")'
     agents:
       queue: "juliagpu"
       cuda: "*"
-    if: |
-      build.message !~ /^\[skip gpu\]/ &&
-      build.message !~ /^\[skip cuda\]/
+    if: build.message !~ /\[skip tests\]/
     timeout_in_minutes: 60
 
 env:
