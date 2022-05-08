@@ -1,0 +1,16 @@
+steps:
+  - label: "Julia v1"
+    plugins:
+      - JuliaCI/julia#v1:
+          version: "1"
+      - JuliaCI/julia-test#v1: ~
+      - JuliaCI/julia-coverage#v1:
+          codecov: true
+    agents:
+      queue: "juliagpu"
+      cuda: "*"
+    if: build.message !~ /\[skip tests\]/
+    timeout_in_minutes: 60
+
+env:
+  SECRET_CODECOV_TOKEN: "nzfKzFVQDgAG+f+/vft//CVb43EJ17gEleE0yQ/gXpl+vEAafEuMD3TrQ1vCtRZPKpr5mavHSUk9X9/nPnsoDmVvO7qbmyyee66i7FtaOdrCiihPLXe3gptt44uXx4E+3Q3bqZ748NneEt0pn+jWSigo4mJxewxETqddFLyPIpSKGTOnc6TWAX5b7qX1BXnlVggI4MqdZijFnJ6wu4jga8QKdvatf49SGQBINxz8OTkZpcRW+MlzJsG7gNZRm5eBp9J0alihe4a4wSGCStWzpbHMAV7nSI3ek7a8Y042h1JxCJ5hJ0llm6MW4y8MJz8DAVF35papCe6N7s6K21UFWQ==;U2FsdGVkX18p5ti+K5TGgvTqvdez3tsY57gWJjl1eiGXmNVEBvRaHSeEhtYi1HXJ0jc4JERzHZTAUgo4pnpqAA=="
